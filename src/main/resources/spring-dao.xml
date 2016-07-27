@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:c="http://www.springframework.org/schema/c" xmlns:cache="http://www.springframework.org/schema/cache"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc" xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:lang="http://www.springframework.org/schema/lang" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
+		http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+	<bean id="baseDao" class="com.itaoniu.testserver.persist.dao.base.EntityDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="uuidDao" parent="baseDao"> 
+        <constructor-arg> 
+            <value>com.itaoniu.testserver.persist.pojo.TUuid</value> 
+        </constructor-arg>
+    </bean>
+    <bean id="adminDao" parent="baseDao"> 
+        <constructor-arg> 
+            <value>com.itaoniu.testserver.persist.pojo.TAdmin</value> 
+        </constructor-arg>
+    </bean>
+    <bean id="userDao" parent="baseDao"> 
+        <constructor-arg> 
+            <value>com.itaoniu.testserver.persist.pojo.TUser</value> 
+        </constructor-arg>
+    </bean>
+    <bean id="userInfoDao" parent="baseDao"> 
+        <constructor-arg> 
+            <value>com.itaoniu.testserver.persist.pojo.TUserInfo</value> 
+        </constructor-arg>
+    </bean>
+    <bean id="userLogDao" parent="baseDao"> 
+        <constructor-arg> 
+            <value>com.itaoniu.testserver.persist.pojo.TUserLog</value> 
+        </constructor-arg>
+    </bean>
+    <bean id="employeeDao" parent="baseDao"> 
+        <constructor-arg> 
+            <value>com.itaoniu.testserver.persist.pojo.TEmployee</value> 
+        </constructor-arg>
+    </bean>
+    <bean id="employeeInfoDao" parent="baseDao"> 
+        <constructor-arg> 
+            <value>com.itaoniu.testserver.persist.pojo.TEmployeeInfo</value> 
+        </constructor-arg>
+    </bean>
+    <bean id="permissionDao" parent="baseDao"> 
+        <constructor-arg> 
+            <value>com.itaoniu.testserver.persist.pojo.TPermission</value> 
+        </constructor-arg>
+    </bean>
+    <bean id="roleDao" parent="baseDao"> 
+        <constructor-arg> 
+            <value>com.itaoniu.testserver.persist.pojo.TRole</value> 
+        </constructor-arg>
+    </bean>
+    <bean id="rolePermissionDao" parent="baseDao"> 
+        <constructor-arg> 
+            <value>com.itaoniu.testserver.persist.pojo.TRolePermission</value> 
+        </constructor-arg>
+    </bean>
+    <bean id="storeDao" parent="baseDao"> 
+        <constructor-arg> 
+            <value>com.itaoniu.testserver.persist.pojo.TStore</value> 
+        </constructor-arg>
+    </bean>
+    <bean id="storeInfoDao" parent="baseDao"> 
+        <constructor-arg> 
+            <value>com.itaoniu.testserver.persist.pojo.TStoreInfo</value> 
+        </constructor-arg>
+    </bean>
+    <bean id="storeLocationDao" parent="baseDao"> 
+        <constructor-arg> 
+            <value>com.itaoniu.testserver.persist.pojo.TStoreLocation</value> 
+        </constructor-arg>
+    </bean>
+    <bean id="storeLogDao" parent="baseDao"> 
+        <constructor-arg> 
+            <value>com.itaoniu.testserver.persist.pojo.TStoreLog</value> 
+        </constructor-arg>
+    </bean>
+    <bean id="storeRoleEmployeeDao" parent="baseDao"> 
+        <constructor-arg> 
+            <value>com.itaoniu.testserver.persist.pojo.TStoreRoleEmployee</value> 
+        </constructor-arg>
+    </bean>
+        <bean id="storeSettingDao" parent="baseDao"> 
+        <constructor-arg> 
+            <value>com.itaoniu.testserver.persist.pojo.TStoreSetting</value> 
+        </constructor-arg>
+    </bean>
+  
+    
+</beans>

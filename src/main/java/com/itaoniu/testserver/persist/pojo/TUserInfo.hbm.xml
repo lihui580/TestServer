@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-6-28 9:38:42 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.itaoniu.testserver.persist.pojo.TUserInfo" table="t_user_info" catalog="testserver">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="uuid" type="string">
+            <column name="uuid" length="50" not-null="true" unique="true">
+                <comment>&#211;&#195;&#187;&#167;</comment>
+            </column>
+        </property>
+        <property name="image" type="string">
+            <column name="image" length="50" not-null="true">
+                <comment>&#205;&#183;&#207;&#241;</comment>
+            </column>
+        </property>
+        <property name="nickname" type="string">
+            <column name="nickname" length="50" not-null="true">
+                <comment>&#234;&#199;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="signature" type="string">
+            <column name="signature" length="140" not-null="true">
+                <comment>&#199;&#169;&#195;&#251;</comment>
+            </column>
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="create_time" length="19" not-null="true">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="updateTime" type="timestamp">
+            <column name="update_time" length="19" not-null="true">
+                <comment>&#184;&#252;&#208;&#194;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="exist" type="int">
+            <column name="exist" not-null="true">
+                <comment>&#202;&#199;&#183;&#241;&#180;&#230;&#212;&#218; 1.&#180;&#230;&#212;&#218; 2.&#178;&#187;&#180;&#230;&#212;&#218;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

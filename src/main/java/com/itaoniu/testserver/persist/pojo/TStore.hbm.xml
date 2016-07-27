@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-6-28 9:38:42 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.itaoniu.testserver.persist.pojo.TStore" table="t_store" catalog="testserver">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="uuid" type="string">
+            <column name="uuid" length="50" not-null="true">
+                <comment>uuid</comment>
+            </column>
+        </property>
+        <property name="store" type="string">
+            <column name="store" length="50" not-null="true" unique="true">
+                <comment>&#181;&#234;&#198;&#204;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="logo" type="string">
+            <column name="logo" length="200" not-null="true">
+                <comment>&#181;&#234;&#198;&#204;logo</comment>
+            </column>
+        </property>
+        <property name="resume" type="string">
+            <column name="resume" length="240" not-null="true">
+                <comment>&#181;&#234;&#198;&#204;&#188;&#242;&#202;&#246;</comment>
+            </column>
+        </property>
+        <property name="status" type="int">
+            <column name="status" not-null="true">
+                <comment>&#181;&#234;&#198;&#204;&#215;&#180;&#204;&#172;0-&#185;&#216;&#181;&#234; 1-&#191;&#170;&#181;&#234;</comment>
+            </column>
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="create_time" length="19" not-null="true">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="updateTime" type="timestamp">
+            <column name="update_time" length="19" not-null="true">
+                <comment>&#208;&#222;&#184;&#196;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="exist" type="int">
+            <column name="exist" not-null="true">
+                <comment>&#202;&#199;&#183;&#241;&#180;&#230;&#212;&#218; 1.&#180;&#230;&#212;&#218; 2.&#178;&#187;&#180;&#230;&#212;&#218;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

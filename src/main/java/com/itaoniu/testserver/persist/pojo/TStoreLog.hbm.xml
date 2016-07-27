@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-6-28 9:38:42 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.itaoniu.testserver.persist.pojo.TStoreLog" table="t_store_log" catalog="testserver">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="uuid" type="string">
+            <column name="uuid" length="50" not-null="true">
+                <comment>UUID</comment>
+            </column>
+        </property>
+        <property name="storeId" type="long">
+            <column name="store_id" not-null="true">
+                <comment>&#181;&#234;&#198;&#204;ID</comment>
+            </column>
+        </property>
+        <property name="storeName" type="string">
+            <column name="store_name" length="50" not-null="true">
+                <comment>&#181;&#234;&#198;&#204;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="storeRoleId" type="long">
+            <column name="store_role_id" not-null="true" />
+        </property>
+        <property name="storeRoleName" type="string">
+            <column name="store_role_name" length="50" not-null="true" />
+        </property>
+        <property name="storeEmployeeId" type="long">
+            <column name="store_employee_id" not-null="true">
+                <comment>&#181;&#234;&#198;&#204;&#189;&#199;&#201;&#171;ID</comment>
+            </column>
+        </property>
+        <property name="storeEmployeeName" type="string">
+            <column name="store_employee__name" length="50" not-null="true">
+                <comment>&#181;&#234;&#198;&#204;&#189;&#199;&#201;&#171;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="operation" type="string">
+            <column name="operation" length="50" not-null="true">
+                <comment>&#178;&#217;&#215;&#247;&#181;&#216;&#214;&#183;</comment>
+            </column>
+        </property>
+        <property name="operationType" type="string">
+            <column name="operation_type" length="50" not-null="true">
+                <comment>&#178;&#217;&#215;&#247;&#192;&#224;&#208;&#205;</comment>
+            </column>
+        </property>
+        <property name="params" type="string">
+            <column name="params" length="65535" not-null="true">
+                <comment>&#200;&#235;&#178;&#206;</comment>
+            </column>
+        </property>
+        <property name="result" type="string">
+            <column name="result" length="65535" not-null="true">
+                <comment>&#179;&#246;&#178;&#206;</comment>
+            </column>
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="create_time" length="19" not-null="true">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="updateTime" type="timestamp">
+            <column name="update_time" length="19" not-null="true">
+                <comment>&#184;&#252;&#208;&#194;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="exist" type="int">
+            <column name="exist" not-null="true">
+                <comment>&#202;&#199;&#183;&#241;&#180;&#230;&#212;&#218; 1.&#180;&#230;&#212;&#218; 2.&#178;&#187;&#180;&#230;&#212;&#218;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-6-28 9:38:42 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.itaoniu.testserver.persist.pojo.TRolePermission" table="t_role_permission" catalog="testserver">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="roleId" type="long">
+            <column name="role_id" not-null="true">
+                <comment>&#189;&#199;&#201;&#171;ID</comment>
+            </column>
+        </property>
+        <property name="name" type="string">
+            <column name="name" length="50" not-null="true">
+                <comment>&#200;&#168;&#207;&#222;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="clazz" type="string">
+            <column name="clazz" length="50" not-null="true">
+                <comment>&#200;&#168;&#207;&#222;&#215;&#247;&#211;&#195;&#181;&#196;&#192;&#224;</comment>
+            </column>
+        </property>
+        <property name="method" type="string">
+            <column name="method" length="50" not-null="true">
+                <comment>&#200;&#168;&#207;&#222;&#215;&#247;&#211;&#195;&#181;&#196;&#183;&#189;&#183;&#168;</comment>
+            </column>
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="create_time" length="19" not-null="true">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="updateTime" type="timestamp">
+            <column name="update_time" length="19" not-null="true">
+                <comment>&#208;&#222;&#184;&#196;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="exist" type="int">
+            <column name="exist" not-null="true">
+                <comment>&#202;&#199;&#183;&#241;&#180;&#230;&#212;&#218; 1.&#180;&#230;&#212;&#218; 2.&#178;&#187;&#180;&#230;&#212;&#218;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

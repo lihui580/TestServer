@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   
+    xmlns:jaxws="http://cxf.apache.org/jaxws"  
+    xmlns:jaxrs="http://cxf.apache.org/jaxrs"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+                       http://www.springframework.org/schema/beans/spring-beans.xsd  
+                       http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd  
+                       http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd">  
+  
+  <import resource="classpath:META-INF/cxf/cxf.xml" />  
+  <import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />  
+  <import resource="classpath:META-INF/cxf/cxf-servlet.xml" />  
+  
+  	
+  
+  <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />
+  <bean id="jsonProvider" class="com.itaoniu.testserver.provider.CustomProvider" />
+  <bean id="JsonExceptionProvider" class="com.itaoniu.testserver.interceptor.JsonExceptionProvider" />
+  <bean id="outMessageInterceptor" class="com.itaoniu.testserver.interceptor.OutMessageInterceptor" />
+  <bean id="inMessageInterceptor" class="com.itaoniu.testserver.interceptor.InMessageInterceptor" />
+   
+   <!-- 接口 -->
+    <bean id="tn"
+		class="com.itaoniu.testserver.view.webserver.reset.v1.tn.LoginImpl">
+		<property name="usersService">
+			<ref bean="usersService" />
+		</property>
+   </bean>
+    <bean id="users"
+		class="com.itaoniu.testserver.view.webserver.reset.v1.users.UsersImpl">
+		<property name="usersService">
+			<ref bean="usersService" />
+		</property>
+		<property name="userInfosService">
+			<ref bean="userInfosService" />
+		</property>
+   </bean>
+   <bean id="roles"
+		class="com.itaoniu.testserver.view.webserver.reset.v1.roles.RolesImpl">
+		<property name="rolesService">
+			<ref bean="rolesService" />
+		</property>
+   </bean>
+   <bean id="employees"
+		class="com.itaoniu.testserver.view.webserver.reset.v1.employees.EmployeesImpl">
+		<property name="employeesService">
+			<ref bean="employeesService" />
+		</property>
+   </bean>
+   <bean id="permissions"
+		class="com.itaoniu.testserver.view.webserver.reset.v1.permissions.PermissionsImpl">
+		<property name="permissionsService">
+			<ref bean="permissionsService" />
+		</property>
+   </bean>
+   
+   <jaxrs:server id="testserver" address="/">
+   		<jaxrs:inInterceptors>
+			<ref bean="inMessageInterceptor" />
+		</jaxrs:inInterceptors>
+		
+   		<jaxrs:outInterceptors>
+			<ref bean="outMessageInterceptor" />
+		</jaxrs:outInterceptors>
+		
+   		<jaxrs:providers>
+			<ref bean="jsonProvider" />
+			<ref bean="JsonExceptionProvider" />
+		</jaxrs:providers>
+		
+   		<jaxrs:serviceBeans>
+   				<ref bean="tn" />
+				<ref bean="users" />
+				<ref bean="roles"/>
+				<ref bean="employees"/>
+				<ref bean="permissions"/>
+		</jaxrs:serviceBeans>
+		
+		<jaxrs:extensionMappings>
+			<entry key="json" value="application/json" />
+			<entry key="xml" value="application/xml" />
+		</jaxrs:extensionMappings>
+	</jaxrs:server>
+</beans>  

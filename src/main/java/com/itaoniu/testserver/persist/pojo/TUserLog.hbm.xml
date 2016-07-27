@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-6-28 9:38:42 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.itaoniu.testserver.persist.pojo.TUserLog" table="t_user_log" catalog="testserver">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="uuid" type="string">
+            <column name="uuid" length="50" not-null="true" />
+        </property>
+        <property name="user" type="string">
+            <column name="user" length="50" not-null="true">
+                <comment>&#211;&#195;&#187;&#167;&#213;&#203;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="type" type="string">
+            <column name="type" length="50" not-null="true" />
+        </property>
+        <property name="session" type="string">
+            <column name="session" length="50" not-null="true">
+                <comment>&#191;&#205;&#187;&#167;&#182;&#203;</comment>
+            </column>
+        </property>
+        <property name="token" type="string">
+            <column name="token" length="50" not-null="true">
+                <comment>&#193;&#238;&#197;&#198;</comment>
+            </column>
+        </property>
+        <property name="expire" type="timestamp">
+            <column name="expire" length="19" not-null="true">
+                <comment>&#185;&#253;&#198;&#218;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="userAgent" type="string">
+            <column name="user_agent" length="200" not-null="true">
+                <comment>&#181;&#199;&#194;&#188;&#198;&#189;&#204;&#168;</comment>
+            </column>
+        </property>
+        <property name="operation" type="string">
+            <column name="operation" length="200" not-null="true">
+                <comment>&#178;&#217;&#215;&#247;&#181;&#216;&#214;&#183;</comment>
+            </column>
+        </property>
+        <property name="address" type="string">
+            <column name="address" length="50" not-null="true">
+                <comment>&#181;&#216;&#214;&#183;</comment>
+            </column>
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="create_time" length="19" not-null="true">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="updateTime" type="timestamp">
+            <column name="update_time" length="19" not-null="true">
+                <comment>&#184;&#252;&#208;&#194;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="exist" type="int">
+            <column name="exist" not-null="true">
+                <comment>&#202;&#199;&#183;&#241;&#180;&#230;&#212;&#218; 1.&#180;&#230;&#212;&#218; 2.&#178;&#187;&#180;&#230;&#212;&#218;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>
